@@ -158,7 +158,7 @@ begin
     raise exception 'Task is unavailable for this account.' using errcode = '42501';
   end if;
   if p_expected_version is distinct from existing.version then
-    raise exception 'Someone updated this task. Reload it before saving.' using errcode = '40001';
+    raise exception 'Someone updated this task. Reload it before saving.' using errcode = 'PT409';
   end if;
   if p_status = 'Cancelled' and existing.scope = 'department' and actor_role <> 'admin' then
     raise exception 'Only an administrator can cancel department work.' using errcode = '42501';

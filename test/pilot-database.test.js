@@ -66,7 +66,7 @@ test('pilot migration enforces staff visibility, versioned updates and durable a
   await assert.rejects(status(assigned.id,1,'Cancelled',{note:'Cancelled'}),{code:'42501'});
   const [waiting] = await status(assigned.id,1,'Waiting',{party:'Facilities',chase:'2026-11-26'});
   assert.equal(waiting.version,2);
-  await assert.rejects(status(assigned.id,1,'In progress'),{code:'40001'});
+  await assert.rejects(status(assigned.id,1,'In progress'),{code:'PT409'});
   const [done] = await status(assigned.id,2,'Done',{note:'Booking confirmed'});
   assert.equal(done.version,3);
   const [reopened] = await status(assigned.id,3,'To do');
