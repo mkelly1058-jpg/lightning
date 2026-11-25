@@ -3,9 +3,10 @@ import { readFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = fileURLToPath(new URL('../dist', import.meta.url));
+const pilot = process.argv.includes('--pilot');
+const root = fileURLToPath(new URL(pilot ? '../build/pilot' : '../dist', import.meta.url));
 const portArg = process.argv.indexOf('--port');
-const port = Number(process.env.PORT || (portArg > -1 && process.argv[portArg + 1]) || 4173);
+const port = Number(process.env.PORT || (portArg > -1 && process.argv[portArg + 1]) || (pilot ? 4174 : 4173));
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
 createServer(async (request, response) => {
   try {

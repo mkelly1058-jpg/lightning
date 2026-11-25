@@ -6,9 +6,18 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "test": "node --test",
-    "check": "node --check dist/app.js && node --check dist/model.js && node --check dist/view.js && node --check dist/forms.js && node --check dist/seed.js && node --check dist/student.js"
+    "check": "node --check dist/app.js && node --check dist/model.js && node --check dist/view.js && node --check dist/forms.js && node --check dist/seed.js && node --check dist/student.js && node --check pilot/app.js && node --check scripts/build-pilot.mjs",
+    "build:pilot": "node scripts/build-pilot.mjs",
+    "dev:pilot": "node scripts/serve.mjs --pilot"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.2"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "esbuild": "^0.28.2"
   }
 }
