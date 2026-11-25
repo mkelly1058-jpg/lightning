@@ -27,3 +27,7 @@ npm test
 The prototype stores invented operational records in the current browser's local storage. The role switch demonstrates visibility and actions. A live pilot requires managed sign-in, server-enforced permissions, a relational database and a verified school export. Student fixtures and results are curated examples in a separate module and do not change when staff edit operational records. The dashboard shows manual source review. The production logo and actual source records were not supplied.
 
 The static site lives in `dist/`. `model.js` contains business rules, `app.js` handles interactions, `view.js` and `forms.js` render the interface, and `seed.js` and `student.js` supply invented data. See [the product design and PRD coverage](docs/product.md) for scope and release dependencies.
+
+## Backend pilot
+
+The separate staff pilot build uses Supabase sign-in and persistent PostgreSQL task records. It covers task creation, administrator assignment, status changes and a database audit trail. See [Deployment and release workflow](docs/deployment.md) for local setup, hosting configuration and the GitHub preview process.

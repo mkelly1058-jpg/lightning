@@ -1,0 +1,25 @@
+.pilot-width { width: min(980px, calc(100% - 36px)); margin-inline: auto; }
+.pilot-header { color: #fff; background: #17171d; }
+.pilot-header .pilot-width { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; }
+.pilot-main { padding-block: 24px 40px; }
+.pilot-hero { min-height: 215px; }
+.pilot-hero h1 { font-size: clamp(2.7rem, 7vw, 4.4rem); }
+.pilot-hero::before { background-position: center 55%; }
+.pilot-panel { margin-top: 16px; }
+.pilot-sign-in { max-width: 470px; }
+.pilot-sign-in .form-grid { grid-template-columns: 1fr; }
+.pilot-message { color: var(--muted); margin-top: 12px; }
+.pilot-message:empty { display: none; }
+.pilot-message.error { color: var(--red-dark); }
+.pilot-pages { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--line); }
+.pilot-pages span { color: var(--muted); font-size: .82rem; }
+.pilot-form { margin-top: 10px; }
+.pilot-form .form-message { color: var(--red-dark); }
+.pilot-form .field { margin-bottom: 3px; }
+.pilot-meta { margin-top: 2px; color: var(--muted); font-size: .82rem; }
+@media (max-width: 520px) {
+  .pilot-width { width: calc(100% - 22px); }
+  .pilot-main { padding-top: 12px; }
+  .pilot-hero { min-height: 183px; }
+  .pilot-panel .record-row .record-copy small { display: block; }
+}
